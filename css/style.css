@@ -58,6 +58,9 @@ nav {
     .taco {
         animation: none;
     }
+    .gif-animation {
+        display: none;
+    }
 }
 
 main {
