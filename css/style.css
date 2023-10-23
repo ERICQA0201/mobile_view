@@ -1,56 +1,213 @@
 body {
-    background-color: aquamarine;
-    color: rgb(4, 24, 139);
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+    background-color: #C7BDE2; /* Slightly off-white for a softer appearance */
+    padding: 20px;
 }
 
-nav{
-    border: 2px solid black;
+nav {
+    border: 2px solid #6750a4;
+    background-color: #f7f5f8;
+    border-radius: 20px;
 }
 
-h1 {
-    color: brown;
-    font-family: 'Arial', sans-serif; /* specify your desired font family */
-    text-align: center; /* align text to the center */
+
+@keyframes moveBg {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
-h2 {
-    color: brown;
-    font-family: 'Arial', sans-serif; /* specify your desired font family */
-    text-align: center; /* align text to the center */
+.cat {
+    background: url("../img/cat_cartoon.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: moveBg 40s linear infinite;
+    width: 100%; /* You need to set a width and height for the element. */
+    height: 150px; /* Adjust the height according to the size of your cartoon image. */
 }
 
-h3 {
-    color: brown;
-    font-family: 'Arial', sans-serif; /* specify your desired font family */
-    text-align: center; /* align text to the center */
+.travel_girl {
+    background: url("../img/travel-people-cartoon-happy-girl-with-hand-vector-9526705.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: moveBg 40s linear infinite;
+    width: 100%; /* You need to set a width and height for the element. */
+    height: 150px; /* Adjust the height according to the size of your cartoon image. */
 }
 
-p {
-    line-height: 1.6; /* This is a unitless number, serving as a multiplier */
-  }
+.taco {
+    background: url("../img/food_cartoon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: moveBg 40s linear infinite;
+    width: 100%; /* You need to set a width and height for the element. */
+    height: 150px; /* Adjust the height according to the size of your cartoon image. */
+}
 
-img {
-    border: 5px solid #ff5733;  /* Replace #ff5733 with your choice of color */
+@media (prefers-reduced-motion: reduce) {
+    .cat {
+        animation: none;
+    }
+
+    .travel_girl {
+        animation: none;
+    }
+
+    .taco {
+        animation: none;
+    }
+}
+
+main {
+    padding: 20px;
+}
+
+main div {
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+main h2 {
+    color: #3b06ca;
+}
+
+main img {
+    width: 80%;
+    height: 500px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 4px;
+    border: 5px solid #a03297;
     padding: 10px;
     margin: 20px;
     border-top-right-radius: 30px;
-  }
+}
+
+video {
+    width: 80%;
+    height: 500px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 4px;
+    border: 5px solid #a03297;
+    padding: 10px;
+    margin: 20px;
+    border-top-right-radius: 30px;
+}
+
+
+h1 {
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    text-align: center;
+}
+
+h2 {
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    text-align: center;
+}
+
+h3 {
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    text-align: center;
+}
+
+p {
+    line-height: 1.6;
+}
+
 
 li {
+    margin-left: 50px;
+}
+
+nav li {
     display: inline-block;
     margin-left: 50px;
-  }
+}
 
-nav a{
-    background-color: black;
+nav a {
+    background-color: #6750a4;
+    border-radius: 7%;
     padding: 5px;
     margin: 20px;
     color: blanchedalmond;
+    text-decoration: none;
+    border: 2px solid transparent;
+    display: inline-block;
+    width: 100px;  /* Fixed width */
+    text-align: center;
 }
 
-#skip {
-    color: blueviolet;
+nav a:focus,
+nav a:hover {
+    background-color: #C7BDE2;
+    border: 2px solid black;
+    outline: none;
 }
 
-/* .thumbnail {
-} */
+.skip_to_main {
+    position: absolute;
+    top: -100px;
+    text-transform: uppercase;
+}
+
+.skip_to_main:focus {
+    left: 20px;
+    top: 50px;
+}
+
+nav a.active {
+    background-color: rgb(221, 27, 27);
+    color: #f7f5f8;
+    border: 7px solid #000000
+}
+
+.nav_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px
+}
+
+@media (min-width: 768px) {
+    .skip_to_main {
+        background-color: #6750a4;
+        border-radius: 7%;
+        padding: 5px;
+        margin: 20px;
+        color: blanchedalmond;
+        text-decoration: none;
+        border: 2px solid transparent;
+        display: inline-block;
+        width: 150px;  /* Fixed width */
+        text-align: center;
+    }
+
+    .skip_to_main:focus, .skip_to_main:hover {
+        background-color: #C7BDE2;
+        border: 2px solid black;
+        outline: none;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 16px;
+    }
+
+    main div {
+        border: 4px dashed #e1e1e1;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .nav_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px
+    }
+
+}
+
+
